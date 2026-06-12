@@ -4,10 +4,14 @@ phases:
   install:
     runtime-versions:
       python: 3.11
+    commands:
+      - echo "Installing Python dependencies..."
+      - python -m pip install --upgrade pip
+      - pip install requests
 
   build:
     commands:
-      - echo "Running wp.py"
+      - echo "Starting Python script..."
       - python --version
       - python wp.py
 
