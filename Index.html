@@ -1,119 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pipeline Status</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CI/CD Deployment</title>
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:Arial, Helvetica, sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
 
-        body{
-            background:linear-gradient(135deg,#0f172a,#1e293b);
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            color:white;
-        }
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff512f,#dd2476,#24c6dc,#514a9d);
+    background-size:400% 400%;
+    animation:gradient 12s ease infinite;
+    overflow:hidden;
+}
 
-        .container{
-            background:rgba(255,255,255,0.08);
-            backdrop-filter:blur(12px);
-            padding:40px;
-            border-radius:18px;
-            text-align:center;
-            width:420px;
-            box-shadow:0 10px 30px rgba(0,0,0,.4);
-        }
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-        h1{
-            font-size:28px;
-            margin-bottom:10px;
-        }
+.card{
+    width:700px;
+    max-width:90%;
+    text-align:center;
+    padding:60px 40px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+    color:white;
+}
 
-        p{
-            color:#d1d5db;
-            margin-bottom:30px;
-        }
+.icon{
+    font-size:80px;
+    animation:bounce 2s infinite;
+}
 
-        .spinner{
-            width:70px;
-            height:70px;
-            margin:auto;
-            border:8px solid rgba(255,255,255,.2);
-            border-top:8px solid #22c55e;
-            border-radius:50%;
-            animation:spin 1s linear infinite;
-        }
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
 
-        @keyframes spin{
-            from{
-                transform:rotate(0deg);
-            }
-            to{
-                transform:rotate(360deg);
-            }
-        }
+h1{
+    margin-top:20px;
+    font-size:48px;
+    font-weight:700;
+}
 
-        .status{
-            margin-top:30px;
-            display:inline-block;
-            background:#16a34a;
-            padding:10px 22px;
-            border-radius:30px;
-            font-weight:bold;
-            animation:pulse 1.5s infinite;
-        }
+.highlight{
+    color:#ffe066;
+}
 
-        @keyframes pulse{
-            0%{
-                transform:scale(1);
-                opacity:1;
-            }
-            50%{
-                transform:scale(1.05);
-                opacity:.8;
-            }
-            100%{
-                transform:scale(1);
-                opacity:1;
-            }
-        }
+p{
+    margin-top:20px;
+    font-size:22px;
+    color:#f8f9fa;
+    line-height:1.6;
+}
 
-        .dots::after{
-            content:"";
-            animation:dots 1.5s steps(4,end) infinite;
-        }
+.badge{
+    display:inline-block;
+    margin-top:35px;
+    padding:14px 32px;
+    background:#22c55e;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    box-shadow:0 0 20px rgba(34,197,94,.6);
+    animation:pulse 1.5s infinite;
+}
 
-        @keyframes dots{
-            0%{content:"";}
-            25%{content:".";}
-            50%{content:"..";}
-            75%{content:"...";}
-            100%{content:"";}
-        }
-    </style>
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+        box-shadow:0 0 20px rgba(34,197,94,.6);
+    }
+    50%{
+        transform:scale(1.08);
+        box-shadow:0 0 35px rgba(34,197,94,.9);
+    }
+    100%{
+        transform:scale(1);
+        box-shadow:0 0 20px rgba(34,197,94,.6);
+    }
+}
+
+.footer{
+    margin-top:35px;
+    color:#f1f5f9;
+    font-size:18px;
+}
+</style>
 </head>
+
 <body>
 
-<div class="container">
+<div class="card">
 
-    <div class="spinner"></div>
+<div class="icon">🚀</div>
 
-    <h1>🚀 Puchuk<span class="dots"></span></h1>
+<h1>
+The <span class="highlight">CI/CD Deployment</span><br>
+is Working! 🎉
+</h1>
 
-    <p>The pipeline is running.<br>
-    Please wait while the deployment is in progress.</p>
+<p>
+Your AWS CodePipeline successfully deployed this website.<br><br>
+<strong>Huehuehue 😎</strong>
+</p>
 
-    <div class="status">
-        ⏳ Pipeline Running
-    </div>
+<div class="badge">
+✅ Deployment Successful
+</div>
+
+<div class="footer">
+Built with ❤️ using GitHub • AWS CodePipeline • CodeBuild • Amazon S3
+</div>
 
 </div>
 
