@@ -38,7 +38,7 @@ pip install requests
 ## Usage
 
 ```bash
-python exploit.py -u http://127.0.0.1
+python wp.py -u http://127.0.0.1
 ```
 
 ## Arguments
